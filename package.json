@@ -33,11 +33,20 @@
     "url": "git+https://github.com/tableflip/prepost.git"
   },
   "keywords": [
-    "IPFS",
-    "postMessage",
-    "window.postMessage",
-    "proxy",
-    "rpc"
+    "pre",
+    "post",
+    "before",
+    "after",
+    "args",
+    "arguments",
+    "async",
+    "sync",
+    "promise",
+    "return",
+    "change",
+    "modify",
+    "alter",
+    "mutate"
   ],
   "bugs": {
     "url": "https://github.com/tableflip/prepost/issues"
