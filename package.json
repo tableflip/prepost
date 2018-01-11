@@ -1,6 +1,6 @@
 {
   "name": "prepost",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Alter arguments and return values before and after a function is called",
   "main": "lib/index.js",
   "scripts": {
