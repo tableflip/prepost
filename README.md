@@ -4,6 +4,12 @@
 
 > Alter arguments and return values before and after a function is called
 
+## Install
+
+```sh
+npm install prepost
+```
+
 ## Usage
 
 Alter arguments to a function:
