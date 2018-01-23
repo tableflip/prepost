@@ -90,7 +90,7 @@ NOTE: If any one of your post functions returns a promise then the function retu
 
 ## Contribute
 
-Feel free to dive in! [Open an issue](https://github.com/tableflip/mem-storage-area/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/tableflip/prepost/issues/new) or submit PRs.
 
 ## License
 
