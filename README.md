@@ -4,6 +4,12 @@
 
 > Alter arguments and return values before and after a function is called
 
+## Install
+
+```sh
+npm install prepost
+```
+
 ## Usage
 
 Alter arguments to a function:
@@ -81,3 +87,12 @@ NOTE: If any one of your pre functions returns a promise then the function retur
 Returns a function that when called will call all the post-functions in order after calling `func`.
 
 NOTE: If any one of your post functions returns a promise then the function returned by `post` becomes async (returns a promise), regardless of whether `func` was already async or not.
+
+## Contribute
+
+Feel free to dive in! [Open an issue](https://github.com/tableflip/prepost/issues/new) or submit PRs.
+
+## License
+
+[MIT](LICENSE) © Alan Shaw
+
