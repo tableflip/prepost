@@ -200,3 +200,44 @@ test('should not allow non function fn', (t) => {
   const fn = 138
   t.throws(() => pre(preFn, fn)(), TypeError, 'non function fn throws')
 })
+
+test('should allow passing pre functions as an array', (t) => {
+  t.plan(24)
+
+  const arg = 2
+
+  const preFn0 = (n) => {
+    t.pass('preFn0 function called')
+    return [n * 2]
+  }
+
+  const preFn1 = (n) => {
+    t.pass('preFn1 function called')
+    return [n * 3]
+  }
+
+  const preFn2 = (n) => {
+    t.pass('preFn2 function called')
+    return [n * 4]
+  }
+
+  const fn = (n) => {
+    t.pass('fn function called')
+    t.is(n, 48, 'arg altered')
+    return n
+  }
+
+  let result
+
+  result = pre([preFn0, preFn1, preFn2], fn)(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = pre(preFn0, [preFn1, preFn2], fn)(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = pre([preFn0, preFn1, preFn2, fn])(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = pre(preFn0, preFn1, [preFn2, fn])(arg)
+  t.is(result, 48, 'correct value returned')
+})

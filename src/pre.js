@@ -2,6 +2,9 @@ const preCallNoop = (...args) => args
 
 // Alter the arguments before they are passed to the function
 export default function pre (...args) {
+  // Flatten args so that pre functions can be passed as arrays
+  args = [].concat(...args)
+
   if (args.length < 2) {
     throw new Error('Two arguments required')
   } else if (args.length > 2) {

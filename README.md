@@ -64,7 +64,7 @@ await doubleAdd(1, 2) // -> 6
 
 #### `pre(preFunc, [preFunc1, preFunc2, ...,] func)`
 
-* `preFunc` - function to call before `func`. It is passed arguments as they would be if calling `func` normally. `preFunc` **must** return an array of arguments **or** a promise that resolves to an array.
+* `preFunc` - function (or array of functions) to call before `func`. It is passed arguments as they would be if calling `func` normally. `preFunc` **must** return an array of arguments **or** a promise that resolves to an array.
 * `preFunc1, preFunc2, ...` - other functions to call in series before `func`. The altered arguments from `preFunc` are passed to `preFunc1` and so on.
 * `func` - function to call after all the pre-functions have run and altered arguments
 
@@ -75,7 +75,7 @@ NOTE: If any one of your pre functions returns a promise then the function retur
 #### `post(func, postFunc [, postFunc1, postFunc2, ...])`
 
 * `func` - function to call and pass return value to `postFunc`
-* `postFunc` - function to call after `func`. It is passed the return value as it's first argument. If `func` returns a promise, this is first resolved before `postFunc` is called. `preFunc` should return the altered return value from `func` **or** a promise that resolves to the return value.
+* `postFunc` - function (or array of functions) to call after `func`. It is passed the return value as it's first argument. If `func` returns a promise, this is first resolved before `postFunc` is called. `preFunc` should return the altered return value from `func` **or** a promise that resolves to the return value.
 * `postFunc1, postFunc2, ...` - other functions to call in series after `func`. The altered return value from `postFunc` is passed to `postFunc1` and so on.
 
 Returns a function that when called will call all the post-functions in order after calling `func`.

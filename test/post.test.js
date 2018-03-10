@@ -170,3 +170,46 @@ test('should not allow non function fn', (t) => {
   const fn = 138
   t.throws(() => post(fn, pre)(), TypeError, 'non function fn throws')
 })
+
+test('should allow passing post functions as an array', (t) => {
+  t.plan(32)
+
+  const arg = 2
+
+  const fn = (n) => {
+    t.pass('fn function called')
+    return n
+  }
+
+  const postFn0 = (n) => {
+    t.pass('postFn0 function called')
+    t.is(n, 2)
+    return n * 2
+  }
+
+  const postFn1 = (n) => {
+    t.pass('postFn1 function called')
+    t.is(n, 4)
+    return n * 3
+  }
+
+  const postFn2 = (n) => {
+    t.pass('postFn2 function called')
+    t.is(n, 12)
+    return n * 4
+  }
+
+  let result
+
+  result = post(fn, [postFn0, postFn1, postFn2])(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = post(fn, postFn0, [postFn1, postFn2])(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = post([fn, postFn0, postFn1, postFn2])(arg)
+  t.is(result, 48, 'correct value returned')
+
+  result = post([fn, postFn0], postFn1, postFn2)(arg)
+  t.is(result, 48, 'correct value returned')
+})

@@ -17,12 +17,12 @@
   "author": "Alan Shaw",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "npm-run-all": "^4.1.2",
     "nyc": "^11.4.1",
-    "standard": "^10.0.3"
+    "standard": "^11.0.0"
   },
   "directories": {
     "lib": "lib",
