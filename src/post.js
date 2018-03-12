@@ -2,7 +2,7 @@ const postCallNoop = (res) => res
 
 // Alter the return value before it is passed back to the caller
 export default function post (...args) {
-  // Flatten args so that pre functions can be passed as arrays
+  // Flatten args so that post functions can be passed as arrays
   args = [].concat(...args)
 
   if (args.length < 2) {
